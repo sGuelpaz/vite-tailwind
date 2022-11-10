@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Productos = () => {
   return (
-    <div>Productos</div>
+    <div className='mt-24'>Productos</div>
   )
 }

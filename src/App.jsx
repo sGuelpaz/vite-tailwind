@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "./components/navbar/navbar";
+import { Navbar } from "./components/navbar";
 import { Productos } from "./views/productos/Productos";
 import { Usuarios } from "./views/usuarios/Usuarios";
 import { Ventas } from "./views/ventas/Ventas";
@@ -8,11 +8,12 @@ import { useNavbar } from "./hooks/useNavbar";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const {URLS} = useNavbar();
+  const {URLS, abrir, setAbrir} = useNavbar();
 
   return (
     <div>
-      <Navbar rutas={URLS} />
+      {/* <Navbar rutas={URLS} /> */}
+      <Navbar rutas={URLS} abrir={abrir} setAbrir={setAbrir} />
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/prod' element={<Productos/>}/>
