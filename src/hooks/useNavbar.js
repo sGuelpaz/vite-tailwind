@@ -7,10 +7,16 @@ export const useNavbar = () => {
             ['Ventas', '/vent'],
     ]
 
+    const LINKSB = [
+      ['Loguearse', '/login'],
+      ['Registrarse', '/regis'],
+]
+
     const [abrir, setAbrir] = useState(false);
     return {
         URLS,
         abrir,
-        setAbrir
+        setAbrir,
+        LINKSB
   }
 }

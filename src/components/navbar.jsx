@@ -5,7 +5,7 @@ import Button from './buttons/button';
 import { SiVisualstudiocode } from 'react-icons/si';
 
 
-export const Navbar = ({rutas, abrir, setAbrir}) => {
+export const Navbar = ({rutas, abrir, setAbrir, linksB}) => {
   return (
     <div className='shadow-md w-full fixed top-0 left-0'>
         <div className='md:flex items-center justify-between bg-red-900 py-4  px-7'>
@@ -27,13 +27,11 @@ export const Navbar = ({rutas, abrir, setAbrir}) => {
                     ">{title}</Link></li>
                 ))}
 
-                <li className='my-7 md:my-0 '>
-                <Button>Loguearse</Button>
-                </li>
-
-                <li className='my-7 md:my-0 '>
-                <Button>Registrarse</Button>
-                </li>
+                {linksB.map(([name, urlB]) =>(
+                    <li key={name} className='my-7 md:my-0 ' >
+                    <Button><Link to={urlB}>{name}</Link></Button>
+                    </li>
+                ))}
             </ul>
         </div>
     </div>
